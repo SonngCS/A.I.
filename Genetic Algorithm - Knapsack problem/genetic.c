@@ -121,7 +121,7 @@ void SaveFile(Population * pop, clock_t start, char * file, double matriz[EPOCHS
     fprintf(out, "ITEMS:\n");
 
     for(int i = 0; i < CHROM; i++){                     //Saving item information
-        fprintf(out, itemNames[i]);
+        fputs(itemNames[i], out);
         fprintf(out, "VALUE: %lf\n", itemValues[i]);
         fprintf(out, "WEIGHT: %lf\n", itemWeights[i]);
         fprintf(out, "VOLUME: %lf\n\n", itemVolumes[i]);
@@ -132,11 +132,11 @@ void SaveFile(Population * pop, clock_t start, char * file, double matriz[EPOCHS
         for(int j = 0; j < CHROM; j++){
             if(pop[i].chromosome[j] != 0) fprintf(out, "%s", itemNames[j]);
         }
-        fprintf(out, "--NOT CHOSEN ITEMS--\n", i);
+        fprintf(out, "--NOT CHOSEN ITEMS--\n");
         for(int j = 0; j < CHROM; j++){
             if(pop[i].chromosome[j] == 0) fprintf(out, "%s", itemNames[j]);
         }
-        fprintf(out, "--FINAL CHROMOSOMES--\n", i);
+        fprintf(out, "--FINAL CHROMOSOMES--\n");
         for(int j = 0; j < CHROM; j++){
             fprintf(out, "%d ", pop[i].chromosome[j]);
         }
