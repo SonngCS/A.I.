@@ -1,8 +1,8 @@
 #ifndef _GENETIC_H
 #define _GENETIC_H
 
-#define POPSIZE 150  //Population size
-#define CHROM 35     //Chromosome size (items)
+#define POPSIZE 150  //Population size (choose a multiple of two)
+#define CHROM 35     //Chromosome size (size of item array)
 #define WEIGHT 50    //Knapsack max weight
 #define VOLUME 60    //Knapsack max volume
 #define ELITISM 2    //Elitism (choose a multiple of two)

@@ -2,6 +2,16 @@
 
 int main(void){
 
+    if(POPSIZE % 2 != 0){
+        fprintf(stderr, "Population size is not a multiple of two!\n");
+        exit(1);
+    }
+
+    if(ELITISM % 2 != 0){
+        fprintf(stderr, "Elitism is not a multiple of two!\n");
+        exit(1);
+    }
+
     srand(time(NULL));
 
     clock_t begin = clock();
